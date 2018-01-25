@@ -12,8 +12,9 @@ Easy jquery scrollBar plugin, easy to use.
         width:'8px'
     });
 
-  Or 
-  $(".scrollContainer").finescroll();
+  OR
+
+    $(".scrollContainer").finescroll();
 
 # Options 
 
