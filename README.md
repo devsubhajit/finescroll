@@ -20,7 +20,7 @@ Easy jquery scrollBar plugin, easy to use.
 
 * alignment : string, right/left
 * value: string, value of position, example: '4px'
-* width: string, value of position, example: '10px'
+* width: string, example: '10px'
 * bgColor: background color of scrollbar, string, example: '#ababab'
 * fgColor: color of scrollbar, string, example: 'red'
 
