@@ -24,6 +24,9 @@ Easy jquery scrollBar plugin, easy to use.
 * bgColor: background color of scrollbar, string, example: '#ababab'
 * fgColor: color of scrollbar, string, example: 'red'
 
+# Demo
+Here is the demo link :: https://devsubhajit.github.io/finescroll/index.html
+
 # In the js folder, you will find touchSupport.js , this is to enable touch for jquery UI (drag)
 
 Thanks for using.
