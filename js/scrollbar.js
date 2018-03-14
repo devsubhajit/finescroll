@@ -68,7 +68,7 @@
 
             var lst = $objInnerHeight - $objHeight;
             var visibleDiff = ($objHeight - ($objMargins / 2)) - ($objInnerHeight - ($objHeight - ($objMargins / 2)));
-
+            console.log(visibleDiff);
             /* The Math for custom scrollBar
              *  latestscrollTop => lst  = (height of scroll element) - (height of container)
              *  visible scrolling area on bar => vsab => visibleDiff = (height of scroll line) - (height of scroll bar);
@@ -97,6 +97,23 @@
                 },
                 stop: function () {
                     isdrag = false;
+                }
+            });
+
+            $($obj).parent(".scrollCont").find(".scroll-backbar").click(function(e){
+                var scrollBar = $($obj).parent(".scrollCont").find(".scroll-bar ");
+                var offTop = $(scrollBar).offset().top - $($obj).offset().top;
+                var posY = $(this).offset().top;
+                var actualClickValue = e.pageY - posY;
+                console.log('clicked ', offTop, ' ', actualClickValue, $(scrollBar).height());
+                var cst = $($obj).scrollTop();
+                console.log(cst)
+                if(actualClickValue > offTop){
+                    var scrollYvalue = actualClickValue - (offTop + $(scrollBar).height());
+                    console.log('scrollYvalue ', scrollYvalue);
+                    $($obj).scrollTop(cst+scrollYvalue);
+                }else{
+
                 }
             });
 
