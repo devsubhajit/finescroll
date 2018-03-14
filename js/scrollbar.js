@@ -26,7 +26,7 @@
             var $objMargins = parseInt($($obj).find('ul').css('margin-top')) + parseInt($($obj).find('ul').css('margin-bottom'));
             var $objInnerHeight = $($obj).children().innerHeight();
             $($obj).wrap("<div class='scrollCont' style='height:" + $objHeight + "px; position:relative;'></div>");
-            $($obj).parent(".scrollCont").append("<div class='scroll-line'><div class='scroll-bar'></div><div class='scrollup'></div><div class='scrolldown'></div></div>");
+            $($obj).parent(".scrollCont").append("<div class='scroll-line'><div class='scroll-backbar'></div><div class='scroll-bar'></div><div class='scrollup'></div><div class='scrolldown'></div></div>");
 
 
             $($obj).parent(".scrollCont").find(".scroll-line").css({
@@ -56,6 +56,14 @@
                 width:settings.width,
                 backgroundColor:settings.fgColor,
                 height: $objInnerHeight - ($objHeight - ($objMargins / 2)) + 'px'
+            });
+            $($obj).parent(".scrollCont").find(".scroll-backbar").css({
+                position:'absolute',
+                top:'0',
+                left:'0',
+                width:'100%',
+                backgroundColor:'transparent',
+                height: '100%'
             });
 
             var lst = $objInnerHeight - $objHeight;
