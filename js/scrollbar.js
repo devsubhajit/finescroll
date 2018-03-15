@@ -101,19 +101,19 @@
             });
 
             $($obj).parent(".scrollCont").find(".scroll-backbar").click(function(e){
-                var scrollBar = $($obj).parent(".scrollCont").find(".scroll-bar ");
-                var offTop = $(scrollBar).offset().top - $($obj).offset().top;
+                var scrollBar = $($obj).parent(".scrollCont").find(".scroll-bar "); // scroll bar
+                var offTop = $(scrollBar).offset().top - $($obj).offset().top; // scroll bars offset top
                 var posY = $(this).offset().top;
-                var actualClickValue = e.pageY - posY;
-                console.log('clicked ', offTop, ' ', actualClickValue, $(scrollBar).height());
+                var actualClickValue = e.pageY - posY; // position of clicked point
                 var cst = $($obj).scrollTop();
-                console.log(cst)
                 if(actualClickValue > offTop){
                     var scrollYvalue = actualClickValue - (offTop + $(scrollBar).height());
-                    console.log('scrollYvalue ', scrollYvalue);
-                    $($obj).scrollTop(cst+scrollYvalue);
+                    var moreScroll = ((offTop +scrollYvalue) * lst) / visibleDiff;
+                    $($obj).scrollTop(moreScroll);
                 }else{
-
+                    var scrollYvalueless = offTop - actualClickValue;
+                    var lessScroll = ((offTop - scrollYvalueless) * lst) / visibleDiff;
+                    $($obj).scrollTop(lessScroll);
                 }
             });
 
